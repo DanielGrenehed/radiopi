@@ -1,0 +1,14 @@
+[Unit]
+Description=RadioSama autostart
+After=network.target
+StartLimitIntervalSec=5
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=playerpi
+ExecStart=/usr/bin/liquidsoap /home/playerpi/radiosama.liq
+
+[Install]
+WantedBy=multi-user.target
